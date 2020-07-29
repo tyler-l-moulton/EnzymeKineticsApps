@@ -10,9 +10,8 @@
 library(shiny)
 library(shinyalert)
 #####
-data <- mtcars
-###
-#Function to convert [Maltose] into OD reading
+
+#####  Function to convert [Maltose] into OD reading ######
 DNSA.maltose <- function(x,sd.reader = 0.03){
   fas <- numeric(length = length(x))
   
@@ -195,7 +194,7 @@ plate.read <- function(substrate.data, substrate, pH,
   return(dfs)
   
 }
-
+### put back into form of 96 well plate
 template.96 <- as.data.frame(matrix(nrow = 8, ncol =13))
 names(template.96) <- c("Row",as.character(c(1:12))) 
 template.96$Row <- c("A","B","C","D","E","F","G","H")
@@ -373,29 +372,13 @@ server <- function(input, output) {
           })
           
           vals$data.out <- dd 
-          
-          
+               
         } 
-
         
       }
-
   
    })
-  
-   # observeEvent(eventExpr = output$plate.reading,{
-   #   if(input$plate.name == ""){
-   #     
-   #     shinyalert(title = "Error",
-   #                text = "Provide name for downloaded data",
-   #                type ="error")
-   #     
-   #   }else if(is.null(vals$data.out) == TRUE){
-   #     
-   #     shinyalert(title = "Error",
-   #                text = "Run simulation first!",
-   #                type = "error")
-   #     
+     
    #   }else{
         output$plate.reading <- downloadHandler(
          filename = function(){
@@ -409,9 +392,6 @@ server <- function(input, output) {
                      file = file,
                      row.names = FALSE)
        })
-   #   }
-   # })
-  
    
    
 }

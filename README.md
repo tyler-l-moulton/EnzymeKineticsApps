@@ -2,7 +2,8 @@
 Apps, readme, and sample data files for sample enzyme kinetics lab simulator 
 
 These apps can be used to explore Michaelis-Menten enzyme kinetics. The "tutorial" app is very straightforward. Users toggle Km and Vmax as well as axis min/max values to see how changing these parameters changes Michaelis-Menten and Lineweaver-Burk plots.
-The """ app allows users to run a full experiment to determine the Km of alpha amylase (in the app, it is specified to be 4). This is done using the conversion of DNSA->ANSA (yellow to orange) by reducing sugars as a proxy for enzyme digestion rate. Using this app students can:
+
+The "Amylase simulator"" app allows users to run a full experiment to determine the Km of alpha amylase (in the app, it is specified to be 4). This is done using the conversion of DNSA->ANSA (yellow to orange) by reducing sugars as a proxy for enzyme digestion rate. Using this app students can:
 1) Create a standard curve to quantify the amount of reducing ends in solution by reacting maltose with DNSA. 
 2) Determine optimal pH for enzyme activity of alpha amylase (based on Gangadharan et al 2009 Appl Biochem Biotech)
 3) Quantify reducing ends in starch solutions at various concentrations WITHOUT digestion by alpha amylase

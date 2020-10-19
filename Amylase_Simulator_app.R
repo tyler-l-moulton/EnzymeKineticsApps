@@ -10,8 +10,7 @@
 library(shiny)
 library(shinyalert)
 #####
-data <- mtcars
-###
+
 #Function to convert [Maltose] into OD reading
 DNSA.maltose <- function(x,sd.reader = 0.03){
   fas <- numeric(length = length(x))
@@ -383,20 +382,7 @@ server <- function(input, output) {
   
    })
   
-   # observeEvent(eventExpr = output$plate.reading,{
-   #   if(input$plate.name == ""){
-   #     
-   #     shinyalert(title = "Error",
-   #                text = "Provide name for downloaded data",
-   #                type ="error")
-   #     
-   #   }else if(is.null(vals$data.out) == TRUE){
-   #     
-   #     shinyalert(title = "Error",
-   #                text = "Run simulation first!",
-   #                type = "error")
-   #     
-   #   }else{
+
         output$plate.reading <- downloadHandler(
          filename = function(){
            paste(input$plate.name, ".csv", sep = "")
